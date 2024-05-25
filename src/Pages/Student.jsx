@@ -26,7 +26,7 @@ export default function Student() {
     const datedenaissance = data.get("datedenaissance");
 
     axios
-      .post("http://localhost:5000/student", {
+      .post("https://orient-pro-server.vercel.app/student", {
         classe,
         name,
         datedenaissance,

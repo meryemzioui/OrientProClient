@@ -10,9 +10,9 @@ const Class = () => {
   const [Students, setStudents] = useState([]);
 
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+    
     axios
-      .get(`${apiUrl}/student`)
+      .get("https://orient-pro-server.vercel.app/student")
       .then((res) => {
         // Format date values before setting the state
         const formattedStudents = res.data.map((student) => ({
@@ -38,9 +38,9 @@ const Class = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // student confirmed deletion, proceed with delete operation
-        const apiUrl = import.meta.env.VITE_API_URL;
+        
         axios
-          .delete(`${apiUrl}/student/${id}`)
+          .delete(`https://orient-pro-server.vercel.app/student/${id}`)
           .then(() => {
             // If the delete operation is successful, remove the student from the state
             setStudents(Students.filter((student) => student._id !== id));

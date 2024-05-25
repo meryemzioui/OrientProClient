@@ -9,9 +9,9 @@ const Admin = () => {
   
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+   
     axios
-      .get(`${apiUrl}/auth/register`)
+      .get("https://orient-pro-server.vercel.app/auth/register")
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
       console.log(users);
@@ -32,9 +32,9 @@ const Admin = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // User confirmed deletion, proceed with delete operation
-        const apiUrl = import.meta.env.VITE_API_URL;
+       
         axios
-          .delete(`${apiUrl}/auth/register/${id}`)
+          .delete(`https://orient-pro-server.vercel.app/auth/register/${id}`)
           .then(() => {
             // If the delete operation is successful, remove the user from the state
             setUsers(users.filter((user) => user._id !== id));

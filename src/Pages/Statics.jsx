@@ -9,16 +9,16 @@ const Statics = () => {
   const [nonadmis, setNonadmis] = useState();
 
   useEffect(() => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+    
     axios
-      .get(`${apiUrl}/student/admis`)
+      .get(`https://orient-pro-server.vercel.app/student/admis`)
       .then((res) => {
         setAdmis(res.data.numberOfAdmittedStudents);
       })
       .catch((err) => console.log(err));
       
     axios
-      .get(`${apiUrl}/student/nonadmis`)
+      .get(`https://orient-pro-server.vercel.app/student/nonadmis`)
       .then((res) => {
         setNonadmis(res.data.numberOfNonAdmittedStudents);
       })
