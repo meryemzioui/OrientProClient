@@ -50,9 +50,9 @@ export default function SignUp() {
   const password = data.get("password");
   const firstName = data.get("firstName");
   const lastName = data.get("lastName");
-
+  const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .post("http://localhost:5000/auth/register", {
+      .post(`${apiUrl}/auth/register`, {
         email,
         password,
         username: firstName + lastName,

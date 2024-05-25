@@ -38,8 +38,9 @@ const Class = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // student confirmed deletion, proceed with delete operation
+        const apiUrl = import.meta.env.VITE_API_URL;
         axios
-          .delete(`http://localhost:5000/student/${id}`)
+          .delete(`${apiUrl}/student/${id}`)
           .then(() => {
             // If the delete operation is successful, remove the student from the state
             setStudents(Students.filter((student) => student._id !== id));
