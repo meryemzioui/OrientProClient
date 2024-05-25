@@ -66,7 +66,7 @@ export default function SignUp() {
           text: "Sign up successful!",
           icon: "success",
         });
-        navigate("/dashboard");
+        navigate("/dashboard/student");
       })
       .catch((err) => console.log(err));
   };
