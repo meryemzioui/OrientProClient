@@ -50,9 +50,9 @@ export default function SignUp() {
   const password = data.get("password");
   const firstName = data.get("firstName");
   const lastName = data.get("lastName");
-  const apiUrl = import.meta.env.VITE_API_URL;
+ 
     axios
-      .post(`${apiUrl}/auth/register`, {
+      .post("https://orient-pro-server.vercel.app/auth/register", {
         email,
         password,
         username: firstName + lastName,
